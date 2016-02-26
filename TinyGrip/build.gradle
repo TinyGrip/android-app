@@ -55,3 +55,7 @@ task runAcceptanceTests(dependsOn: [':presentation:connectedAndroidTest']) {
     description 'Run application acceptance tests.'
 }
 
+task testAll(dependsOn: ['runUnitTests', 'runAcceptanceTests']) {
+    description 'Run all tests within the applicaiton'
+}
+

@@ -9,5 +9,5 @@ machine:
 test:
   override:
     # Simply assemble the project
-    - ./gradlew build -PdisablePreDex -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms512m -Xmx512m" -Dorg.gradle.daemon=false
+    - ./gradlew testAll -PdisablePreDex -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms512m -Xmx512m" -Dorg.gradle.daemon=false
     - cp -r presentation/build/outputs $CIRCLE_ARTIFACTS
