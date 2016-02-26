@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'de.felixschulze.gradle.hockeyapp'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -76,6 +77,15 @@ android {
             versionNameSuffix ".debug"
         }
     }
+}
+
+hockeyapp {
+    apiToken = "314a1b41b9b94c1a9cfc0e9793563b4d"
+    releaseType = 2 // alpha
+    notify = 0
+    status = 2
+    notesType = 1
+    notes = new File(file('../CHANGELOG.md').absolutePath).getText('UTF-8')
 }
 
 dependencies {
