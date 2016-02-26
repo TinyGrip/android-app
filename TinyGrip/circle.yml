@@ -1,0 +1,13 @@
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter "build-tools-23.0.2"
+
+machine:
+  java:
+    version: openjdk7
+
+test:
+  override:
+    # Simply assemble the project
+    - ./gradlew build -PdisablePreDex -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms512m -Xmx512m" -Dorg.gradle.daemon=false
+    - cp -r presentation/build/outputs $CIRCLE_ARTIFACTS
