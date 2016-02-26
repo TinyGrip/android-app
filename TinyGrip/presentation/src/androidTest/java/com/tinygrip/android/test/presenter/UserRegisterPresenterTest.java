@@ -5,7 +5,7 @@ import android.content.Context;
 import android.test.AndroidTestCase;
 import com.tinygrip.android.domain.interactor.user.UserRegister;
 import com.tinygrip.android.presentation.presenter.user.UserRegisterPresenter;
-import com.tinygrip.android.presentation.view.user.view.UserRegisterView;
+import com.tinygrip.android.presentation.view.user.register.UserRegisterView;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import rx.Subscriber;

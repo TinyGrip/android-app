@@ -27,8 +27,8 @@ ext {
     ScalpelVersion = '1.1.1'
 
     // Reactive
-    rxJavaVersion = '1.0.12'
-    rxAndroidVersion = '0.24.0'
+    rxJavaVersion = '1.1.1'
+    rxAndroidVersion = '1.1.0'
 
     // Injection
     daggerVersion = '2.0'

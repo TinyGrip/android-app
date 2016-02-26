@@ -1,9 +1,9 @@
 
 package com.tinygrip.android.test.mapper;
 
-import com.tinygrip.android.domain.model.User;
-import com.tinygrip.android.presentation.view.user.mapper.UserModelDataMapper;
+import com.tinygrip.android.domain.model.user.User;
 import com.tinygrip.android.presentation.model.UserModel;
+import com.tinygrip.android.presentation.view.user.mapper.UserModelDataMapper;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
