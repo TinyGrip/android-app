@@ -7,7 +7,18 @@ machine:
     version: openjdk7
 
 test:
+  pre:
+    - emulator -avd circleci-android22 -no-audio -no-window:
+        background: true
+        parallel: true
+    - circle-android wait-for-boot
   override:
     # Simply assemble the project
     - ./gradlew testAll -PdisablePreDex -Pcom.android.build.threadPoolSize=1 -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xms512m -Xmx512m" -Dorg.gradle.daemon=false
     - cp -r presentation/build/outputs $CIRCLE_ARTIFACTS
+
+deployment:
+  beta:
+    branch: develop
+    commands:
+      - ./gradlew :presentation:uploadInternalToHockeyApp
